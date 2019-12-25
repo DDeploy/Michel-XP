@@ -4,14 +4,15 @@
         <title>Moteur de recherche</title>
         <meta lang="en">
         <meta charset="UTF-8">
-        <meta name="author" content="Benjamin, Vicent, Dylan">
+        <meta name="author" content="Benjamin, Vincent, Dylan">
         <meta name="theme-color" content="#400080">
         <link rel="stylesheet" type="text/css" href="LeCss.css">
     </head>
 <body>
     <h1>Search Engine to find your party</h1>
-    <input id="Searching" name="Searching-bar" type="search" autocomplete="off" placeholder="Insert Here" value="La Valeur" required autofocus>
-    <input id="Submit" name="Submit-Button" type="submit" value="Search me">
+    <input id="Searching" name="Searching-bar" type="search" autocomplete="off" placeholder="Insert Here" value="1" required autofocus onsearch="Go_BQuery()">
+    <input id="Submit" name="Submit-Button" type="submit" value="Search me" onclick="Go_BQuery()">
+    <div id="soirée"></div>
     <h3 id='rep'>NON</h3>
 </body>
     <script type="text/javascript" src="B-Query.js"></script>
