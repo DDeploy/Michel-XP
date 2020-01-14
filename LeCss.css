@@ -3,7 +3,7 @@ html {
 }
 #embed-search {
     color: white;
-    padding: 150px 100px 100px;
+    padding: 150px 0px 100px;
     text-align: center;
 }
 #Logo {
@@ -15,4 +15,9 @@ h1#under_logo {
     font-family: 'Yantramanav', sans-serif;
     font-size: 20px;
     font-weight: 500;
+}
+#item-res {
+    border: 2px solid;
+    align-content: center;
+    text-align: center;
 }
