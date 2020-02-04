@@ -3,16 +3,37 @@ html {
 }
 #embed-search {
     color: white;
-    padding: 150px 100px 100px;
+    padding: 150px 0px 100px;
     text-align: center;
 }
 #Logo {
     font-family: 'Yantramanav', sans-serif;
     font-size: 5em;
-    margin-block-end: -1%;
+    margin-block-end: -2%;
 }
 h1#under_logo {
     font-family: 'Yantramanav', sans-serif;
     font-size: 20px;
     font-weight: 500;
+}
+#item-res {
+    border: 2px solid;
+    color: white;
+    margin: 0px 50px 0px;
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-around;
+    /*background: rgb(113, 1, 141);*/
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.62);
+}
+.Name_Adress {
+    color: white;
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 200;
+    font-size: 1.3em;
+    align-self: center;
+}
+h2#hPrice {
+    font-size: 4em;
+    font-family: 'Yantramanav', sans-serif;
 }

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Moteur de recherche</title>
+    <title>Search Engine for clubber</title>
     <meta lang="en">
     <meta charset="UTF-8">
     <meta name="author" content="Benjamin, Vincent, Dylan">
@@ -11,15 +11,28 @@
     <link href="https://fonts.googleapis.com/css?family=Yantramanav:500,900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="loading()">
     <div id="embed-search">
         <h1 id="Logo">Ezy Party</h1>
         <h1 id="under_logo">Search Engine to find your party</h1>
-        <input id="Searching" name="Searching-bar" type="search" autocomplete="off" placeholder="Insert Here" value="1"
+        <input id="Searching" name="Searching-bar" type="search" autocomplete="off" placeholder="Insert Here" value=""
             required autofocus onsearch="Go_bQuery()">
         <input id="Submit" name="Submit-Button" type="submit" value="Search me" onclick="Go_bQuery()">
         <div id="soirée"></div>
-        <h3 id='rep'>NON</h3>
+        <!--<h3 id='rep'>NON</h3>-->
+    </div>
+    <div id="item-res">
+        <div id="image">
+            <img src="" alt="">
+        </div>
+        <div class="Name_Adress">
+        <h2 id="hName">Nom</h2>
+        <h2 id="hAdress">Adresse</h2>
+        </div>
+        <h2 id="hPrice">Prix</h2>
+    </div>
+    <div>
+        <h2 id="ifNo"></h2>
     </div>
 </body>
 <script type="text/javascript" src="B-Query.js"></script>
