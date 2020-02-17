@@ -1,20 +1,22 @@
 //Résultats disponibles
-var resultats = [
+let db = [
     {
         "id": "1",
         "name": "LMAO Night",
+        "_name": "lmao night",
         "info": {
             "adress": "25, Rue du ku à Lyon",
-            "price": "50€"
-        }
+            "price": "50€",
+        },
     },
     {
         "id": "2",
-        "name": "XParty",
+        "name": "Xparty",
+        "_name": "xparty",
         "info": {
             "adress": "Ionis Campus à Lyon",
-            "price": "20€"
-        }
+            "price": "20€",
+        },
     }
 ];
 
@@ -44,13 +46,14 @@ function Go_bQuery() {
         textContainer.value = "Veuillez entrer un texte alphanumérique";
         return; //On s'arrete la
     }
-
+    
+    textContainer.value.toLowerCase();
     //Pour chaque donnée de la liste, on la parcours pour trouver celui recherchée
-    for (var soireeIndex = 0; soireeIndex < resultats.length; soireeIndex++) {
-        var soiree = resultats[soireeIndex];
+    for (var soireeIndex = 0; soireeIndex < db.length; soireeIndex++) {
+        var soiree = db[soireeIndex];
         //Si le résultat correspond a la recherche
         if (
-            soiree.name.includes(texte) ||
+            soiree._name.includes(texte) ||
             soiree.info.adress.includes(texte)
         ) {
             //enleve le message du résulat précedent
