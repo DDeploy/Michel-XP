@@ -6,7 +6,9 @@ let db = [
         "_name": "lmao night",
         "info": {
             "adress": "25, Rue du ku à Lyon",
+            "_adress": "25, rue du ku à lyon",
             "price": "50€",
+            "description": "C'est incroyable",
         },
     },
     {
@@ -15,7 +17,9 @@ let db = [
         "_name": "xparty",
         "info": {
             "adress": "Ionis Campus à Lyon",
+            "_adress": "ionis campus à lyon",
             "price": "20€",
+            "description": "Soirée de ouf",
         },
     }
 ];
