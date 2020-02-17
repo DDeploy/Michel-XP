@@ -37,7 +37,7 @@ function Go_bQuery() {
     //Contenu du champ de recherche
     var noResult = document.getElementById('ifNo');
     var textContainer = document.getElementById('Searching');
-    var texte = textContainer.value;
+    var texte = textContainer.value.toLowerCase();
     //Node HTML de résultats
     //var resultat = document.getElementById('rep');
     var hName = document.getElementById('hName');
@@ -51,14 +51,13 @@ function Go_bQuery() {
         return; //On s'arrete la
     }
     
-    textContainer.value.toLowerCase();
     //Pour chaque donnée de la liste, on la parcours pour trouver celui recherchée
     for (var soireeIndex = 0; soireeIndex < db.length; soireeIndex++) {
         var soiree = db[soireeIndex];
         //Si le résultat correspond a la recherche
         if (
             soiree._name.includes(texte) ||
-            soiree.info.adress.includes(texte)
+            soiree.info._adress.includes(texte)
         ) {
             //enleve le message du résulat précedent
             if (noResultTrue)
