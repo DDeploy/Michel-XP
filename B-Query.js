@@ -30,7 +30,8 @@ function loading () {
 function Go_bQuery() {
     //Contenu du champ de recherche
     var noResult = document.getElementById('ifNo');
-    var texte = document.getElementById('Searching').value;
+    var textContainer = document.getElementById('Searching');
+    var texte = textContainer.value;
     //Node HTML de résultats
     //var resultat = document.getElementById('rep');
     var hName = document.getElementById('hName');
@@ -39,7 +40,8 @@ function Go_bQuery() {
 
     //Si la valeur du champ de recherche n'est pas bon
     if (!isAlphaNumeric(texte)) {
-        texte.innerHTML = "Veuillez entrer un texte alphanumérique";
+        console.log("IsNotAlphanumeric");
+        textContainer.value = "Veuillez entrer un texte alphanumérique";
         return; //On s'arrete la
     }
 
@@ -53,7 +55,8 @@ function Go_bQuery() {
         ) {
             //enleve le message du résulat précedent
             if (noResultTrue)
-            noResult.innerHTML = "";
+                noResult.innerHTML = "";
+            noResultTrue = false;
             //On affiche le résultat
             //resultat.innerHTML = "Name: " + soiree.name + " | Adresse: " + soiree.info.adress + " | Prix: " + soiree.info.price;
             document.getElementById("item-res").style.display = pre_display;
@@ -65,6 +68,7 @@ function Go_bQuery() {
     }
     //Si aucun résultat n'est trouvé
     noResult.innerHTML = "Aucune soiree trouvée.";
+    document.getElementById("item-res").style.display = "none";
     noResultTrue = true;
 }
 
