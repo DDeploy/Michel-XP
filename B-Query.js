@@ -25,14 +25,15 @@ let db = [
     {
         "id": "3",
         "name": "Soirée cuir et moustache",
-        "_name": "Soirée cuir & moustache",
+        "_name": "soirée cuir & moustache",
         "info": {
             "adress": "25, Rue de la levrette à Lyon",
             "_adress": "25, rue de la levrette à lyon",
             "price": "5300€",
             "description": "On veut du cuir, de la moustache du cuir et moustache",
         },
-        {
+    },
+    {
             "id": "4",
             "name": "Soirée jacquie & michel",
             "_name": "Soirée Jacquie & Michel",
@@ -43,7 +44,6 @@ let db = [
                 "description": "Non vous ne revez pas, il ne manquera plus que jacquie et la team sera complète",
             },
         },
-    },
 ];
 
 let noResultTrue;
@@ -56,12 +56,12 @@ function loading () {
 }
 //Fonction appelée lorsque l'on clique sur le bouton
 function Go_bQuery() {
-    //Contenu du champ de recherche
+    //Contenu du champ de recherche et node d'éléments HTML
+    var errorEmoji = document
     var noResult = document.getElementById('ifNo');
     var textContainer = document.getElementById('Searching');
     var texte = textContainer.value.toLowerCase();
     //Node HTML de résultats
-    //var resultat = document.getElementById('rep');
     var hName = document.getElementById('hName');
     var hAdress = document.getElementById('hAdress');
     var hPrice = document.getElementById('hPrice');
@@ -69,7 +69,7 @@ function Go_bQuery() {
     //Si la valeur du champ de recherche n'est pas bon
     if (!isAlphaNumeric(texte)) {
         console.log("IsNotAlphanumeric");
-        textContainer.value = "Veuillez entrer un texte alphanumérique";
+        noResult.innerHTML = `"${textContainer.value}" ne fonctionne pas... Veuillez entrer un texte alphanumérique !`;
         return; //On s'arrete la
     }
     
@@ -95,6 +95,7 @@ function Go_bQuery() {
         }
     }
     //Si aucun résultat n'est trouvé
+    errorEmoji.innerHTML = "Aucune soiree trouvée.";
     noResult.innerHTML = "Aucune soiree trouvée.";
     document.getElementById("item-res").style.display = "none";
     noResultTrue = true;
@@ -102,5 +103,5 @@ function Go_bQuery() {
 
 //Détermine si la valeur est alphanumérique
 function isAlphaNumeric(value) {
-    return /^[a-zA-Z0-9]+$/.test(value)
+    return /^[a-zA-Z0-9\s']+$/.test(value)
 }
