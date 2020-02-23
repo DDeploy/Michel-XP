@@ -1,6 +1,5 @@
 //Résultats disponibles
-let db = [
-    {
+let db = [{
         "id": "1",
         "name": "LMAO Night",
         "_name": "lmao night",
@@ -34,30 +33,30 @@ let db = [
         },
     },
     {
-            "id": "4",
-            "name": "Soirée jacquie & michel",
-            "_name": "Soirée Jacquie & Michel",
-            "info": {
-                "adress": "11 rue du professeur paul sysley 69003 Lyon",
-                "_adress": "11 rue du professeur paul sysley 69003 Lyon",
-                "price": "C'est gratuit Michel paie toutes les consomations",
-                "description": "Non vous ne revez pas, il ne manquera plus que jacquie et la team sera complète",
-            },
+        "id": "4",
+        "name": "Soirée jacquie & michel",
+        "_name": "Soirée Jacquie & Michel",
+        "info": {
+            "adress": "11 rue du professeur paul sysley 69003 Lyon",
+            "_adress": "11 rue du professeur paul sysley 69003 Lyon",
+            "price": "C'est gratuit Michel paie toutes les consomations",
+            "description": "Non vous ne revez pas, il ne manquera plus que jacquie et la team sera complète",
         },
+    },
 ];
 
+let displayOn;
 let noResultTrue;
 let pre_display;
 
 //Fonction qui masque le cadre de résultat
-function loading () {
+function loading() {
     pre_display = document.getElementById("item-res").style.display;
     document.getElementById("item-res").style.display = "none";
 }
 //Fonction appelée lorsque l'on clique sur le bouton
 function Go_bQuery() {
     //Contenu du champ de recherche et node d'éléments HTML
-    var errorEmoji = document
     var noResult = document.getElementById('ifNo');
     var textContainer = document.getElementById('Searching');
     var texte = textContainer.value.toLowerCase();
@@ -68,11 +67,15 @@ function Go_bQuery() {
 
     //Si la valeur du champ de recherche n'est pas bon
     if (!isAlphaNumeric(texte)) {
-        console.log("IsNotAlphanumeric");
+        if (displayOn) {
+            document.getElementById("item-res").style.display = "none";
+            displayOn = false;
+        }
         noResult.innerHTML = `"${textContainer.value}" ne fonctionne pas... Veuillez entrer un texte alphanumérique !`;
+        noResultTrue = true;
         return; //On s'arrete la
     }
-    
+
     //Pour chaque donnée de la liste, on la parcours pour trouver celui recherchée
     for (var soireeIndex = 0; soireeIndex < db.length; soireeIndex++) {
         var soiree = db[soireeIndex];
@@ -82,26 +85,28 @@ function Go_bQuery() {
             soiree.info._adress.includes(texte)
         ) {
             //enleve le message du résulat précedent
-            if (noResultTrue)
+            if (noResultTrue) {
+                console.log("Boucle if enleve")
                 noResult.innerHTML = "";
-            noResultTrue = false;
-            //On affiche le résultat
-            //resultat.innerHTML = "Name: " + soiree.name + " | Adresse: " + soiree.info.adress + " | Prix: " + soiree.info.price;
-            document.getElementById("item-res").style.display = pre_display;
-            hName.innerHTML = soiree.name;
-            hAdress.innerHTML = soiree.info.adress;
-            hPrice.innerHTML = soiree.info.price;
-            return; //On s'arrete la
+                noResultTrue = false;
+            } //On affiche le résultat
+                document.getElementById("item-res").style.display = pre_display;
+                hName.innerHTML = soiree.name;
+                hAdress.innerHTML = soiree.info.adress;
+                hPrice.innerHTML = soiree.info.price;
+                displayOn = true;
+                return; //On s'arrete la
+            }
         }
-    }
     //Si aucun résultat n'est trouvé
-    errorEmoji.innerHTML = "Aucune soiree trouvée.";
     noResult.innerHTML = "Aucune soiree trouvée.";
     document.getElementById("item-res").style.display = "none";
     noResultTrue = true;
+    console.log("pas de res");
+    return;
 }
 
 //Détermine si la valeur est alphanumérique
 function isAlphaNumeric(value) {
-    return /^[a-zA-Z0-9\s']+$/.test(value)
+    return /^[a-zA-Z0-9éà&'\s]+$/.test(value)
 }

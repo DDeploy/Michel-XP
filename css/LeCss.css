@@ -39,18 +39,30 @@ h2#hPrice {
 }
 
 h2#ifNo {
+    padding: 0% 10% 0%;
     display: flex;
     justify-content: center;
     font-family: 'Yantramanav', sans-serif;
-    font-size: 4em;
+    font-size: 2em;
     color: white;
+}
+
+footer {
+    position: fixed;
+    right: 3%;
+    bottom: 0%;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1em;
 }
 /*Format*/
 
-@media screen 
+@media only screen 
 and (min-device-width : 200px) 
 and (max-device-width : 1024px) { 
-    #Logo, h1#under_logo, #searchingAndButton { 
+    #Logo, h1#under_logo, #searchingAndButton, #item-res { 
     zoom: 2;
+    }
+    h2#ifNo {
+        font-size: 3em;
     }
 }
