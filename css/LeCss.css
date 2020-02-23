@@ -9,7 +9,7 @@ html {
 #Logo {
     font-family: 'Yantramanav', sans-serif;
     font-size: 5em;
-    margin-block-end: -2%;
+    margin-block-end: -18px;
 }
 h1#under_logo {
     font-family: 'Yantramanav', sans-serif;
@@ -36,4 +36,33 @@ h1#under_logo {
 h2#hPrice {
     font-size: 4em;
     font-family: 'Yantramanav', sans-serif;
+}
+
+h2#ifNo {
+    padding: 0% 10% 0%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 2em;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    right: 3%;
+    bottom: 0%;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1em;
+}
+/*Format*/
+
+@media only screen 
+and (min-device-width : 200px) 
+and (max-device-width : 1024px) { 
+    #Logo, h1#under_logo, #searchingAndButton, #item-res { 
+    zoom: 2;
+    }
+    h2#ifNo {
+        font-size: 3em;
+    }
 }
