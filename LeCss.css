@@ -37,3 +37,20 @@ h2#hPrice {
     font-size: 4em;
     font-family: 'Yantramanav', sans-serif;
 }
+
+h2#ifNo {
+    display: flex;
+    justify-content: center;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 4em;
+    color: white;
+}
+/*Format*/
+
+@media screen 
+and (min-device-width : 200px) 
+and (max-device-width : 1024px) { 
+    #Logo, h1#under_logo, #searchingAndButton { 
+    zoom: 2;
+    }
+}
